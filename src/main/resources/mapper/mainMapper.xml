@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mainMapper">
+	<select id = "selectMainList" resultType="map">
+		SELECT * FROM nosell ORDER BY RAND() DESC LIMIT 5
+	</select>
+	<insert id = "newInsert" >
+		INSERT INTO MUC (CODE, TITLE, ACT, ALB, CONTENT, DATE)
+		VALUES (#{code},#{title}, #{act}, #{alb}, #{content}, NOW())		
+	</insert>
+</mapper>
